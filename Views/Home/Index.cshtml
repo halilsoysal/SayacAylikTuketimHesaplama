@@ -1,0 +1,51 @@
+﻿@model Bedas.Models.Edas
+
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<h2>Tedaş</h2>
+<style>
+    .abone {
+        width: 400px;
+        margin: auto;
+    }
+
+    .saga-kaydir {
+        float: right;
+        padding: 0 10px 10px 0;
+    }
+
+    
+</style>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+<div class="form-group">
+    <div class=" abone"> 
+        <ol class="saga-kaydir">
+            <h2 align="center">Abone Grubu</h2>
+            <li>Ticarethane, Çift Terimli, Orta Gerilim = 0,534213</li>
+            <li>Ticarethane, Tek Terimli, Orta Gerilim = 0,536809</li>
+            <li>Ticarethane, Tek Terimli, Alçak Gerilim = 0,542120</li>
+            <li>Sanayi , Tek Terimli, Alçak Gerilim = 0,498371</li>
+            <li>Sanayi , Tek Terimli, Orta Gerilim = 0,489238</li>
+            <li>Sanayi , Çift Terimli, Orta Gerilim = 0,490737</li>
+        </ol>
+    </div>
+    @Html.LabelFor(m => m.AboneGrubu)
+    @Html.TextBoxFor(m => m.AboneGrubu, new { @class = "form-control" })
+    @Html.LabelFor(m => m.KWH)
+    @Html.TextBoxFor(m => m.KWH, new { @class = "form-control" })
+    @Html.LabelFor(m => m.AnlasmaKatsayi)
+    @Html.TextBoxFor(m => m.AnlasmaKatsayi, new { @class = "form-control" })
+</div>
+    <button type="submit" class="btn btn-success">Hesapla</button>
+}
+
+
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
